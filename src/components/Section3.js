@@ -26,19 +26,25 @@ const Section3 = () => {
         <h1 style={{"textAlign":"center"}}>Mood</h1>
          <h3>{question[0]}</h3>
 
-       {q1Choices.map((choice,index) => (
-          <div>
-            <input style={{"marginRight":"5px"}} type='radio' value={q1Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question1"]: e.target.value }))} />
-            <label htmlFor={q1Choices[index]}>{q1Choices[index]}</label>
+         {q1Choices.map((choice,index) => (
+          <div key={index}>
+              <input 
+                  style={{"marginRight":"5px"}} 
+                  type='radio' 
+                  name='question1' 
+                  value={q1Choices[index]} 
+                  onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question1"]: e.target.value }))} 
+              />
+              <label htmlFor={q1Choices[index]}>{q1Choices[index]}</label>
           </div>
-          ))}
+         ))}
 
 
 
       <h3 style={{"marginTop": "10px"}} >{question[1]}</h3>
           {q1Choices.map((choice,index) => (
             <div>
-              <input style={{"marginRight":"5px"}} type='radio' value={q2Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question2"]: e.target.value }))} />
+              <input style={{"marginRight":"5px"}} type='radio' name='question2' value={q2Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question2"]: e.target.value }))} />
               <label htmlFor={q1Choices[index]}>{q2Choices[index]}</label>
             </div>
             ))}
@@ -47,7 +53,7 @@ const Section3 = () => {
       <h3 style={{"marginTop": "10px"}} >{question[2]}</h3>
           {q3_4_5Choices.map((choice,index) => (
             <div>
-              <input style={{"marginRight":"5px"}} type='radio' value={q3_4_5Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question3"]: e.target.value }))} />
+              <input style={{"marginRight":"5px"}} type='radio' name='question3' value={q3_4_5Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question3"]: e.target.value }))} />
               <label htmlFor={q1Choices[index]}>{q3_4_5Choices[index]}</label>
             </div>
             ))}
@@ -55,7 +61,7 @@ const Section3 = () => {
       <h3 style={{"marginTop": "10px"}} >{question[3]}</h3>
           {q3_4_5Choices.map((choice,index) => (
             <div>
-              <input style={{"marginRight":"5px"}} type='radio' value={q3_4_5Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question4"]: e.target.value }))} />
+              <input style={{"marginRight":"5px"}} type='radio' name='question4' value={q3_4_5Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question4"]: e.target.value }))} />
               <label htmlFor={q1Choices[index]}>{q3_4_5Choices[index]}</label>
             </div>
             ))}
@@ -63,7 +69,7 @@ const Section3 = () => {
       <h3 style={{"marginTop": "10px"}} >{question[4]}</h3>
           {q3_4_5Choices.map((choice,index) => (
             <div>
-              <input style={{"marginRight":"5px"}} type='radio' value={q3_4_5Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question5"]: e.target.value }))} />
+              <input style={{"marginRight":"5px"}} type='radio' name='question5' value={q3_4_5Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question5"]: e.target.value }))} />
               <label htmlFor={q3_4_5Choices[index]}>{q3_4_5Choices[index]}</label>
             </div>
             ))}
