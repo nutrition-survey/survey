@@ -74,11 +74,14 @@ const section2 = question.map((question, index) => {
 
           
 
-          if(sectionScore === 0){
-            alert("Please Complte the form")
-            e.preventDefault();
-          }else{
-            cookie.set("section2Score",sectionScore)
+
+          for(let key in response){
+            if(response[key] === ''){
+              alert("Please Complete the form")
+              e.preventDefault();
+            }
+          }
+            cookie.set("section2Score", sectionScore);
             const summary = {
               [question[0]] : response['question1'],
               [question[1]] : response["question2"],
@@ -87,7 +90,8 @@ const section2 = question.map((question, index) => {
               [question[4]] : response["question5"],
             }
             cookie.set("section2QA", summary)
-          }
+
+
 
       }}>Submit</Link></center>
     </div>

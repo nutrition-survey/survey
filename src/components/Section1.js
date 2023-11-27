@@ -60,6 +60,7 @@ const section1 = question.map((question, index) => {
         
         for (let key in response) {
           if (response.hasOwnProperty(key)) {
+
             if(response[key] === "沒有"){
               sectionScore += 0
             }else if(response[key] === "輕微不適"){
@@ -72,11 +73,13 @@ const section1 = question.map((question, index) => {
           }
         }
 
-        if(sectionScore === 0){
-          alert("Please Complte the form")
-          e.preventDefault();
 
-        }else{
+        for(let key in response){
+          if(response[key] === ''){
+            alert("Please Complete the form")
+            e.preventDefault();
+          }
+        }
           cookie.set("section1Score", sectionScore);
           const summary = {
             [question[0]] : response['question1'],
@@ -86,9 +89,10 @@ const section1 = question.map((question, index) => {
             [question[4]] : response["question5"],
           }
           cookie.set("section1QA", summary)
+
         }
 
-      }} to="/sec2">Next</Link></center>
+      } to="/sec2">Next</Link></center>
     </div>
   )
 }
