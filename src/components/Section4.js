@@ -15,15 +15,16 @@ const Section4 = (props) => {
         question5: ''
 
     })
-    const question = ["1.您認為自己的體重是 " ,"2.您會進食過多高脂肪或高膽固醇的食物嗎?" ,"3. 您會進食糖類或甜食嗎?" , "4. 您會進食高熱量或煎炸食物嗎?", "5.您患有高血壓、高膽固醇/高血脂或高血糖嗎?"]
-    const q1Choices = ["標準", "輕微過重/過輕", "過重/過輕", "嚴重過重/過輕"]
-    const q2_3_4Choices = ["沒有", "甚少", "間中(每月1-2次)", "經常"]
-    const q5Choices = ["沒有", "輕微", "中度", "嚴重"]
+    const question = ["1.您認為自己的體重是 What do you think your weight is?" ,"2.您會進食過多高脂肪或高膽固醇的食物嗎?  Do you eat too many high-fat or high-cholesterol foods?" ,"3.\t您會進食糖類或甜食嗎?  Do you eat sugar or sweets?" , "4.\t您會進食高熱量或煎炸食物嗎?  Do you eat high-calorie or fried foods?", "5.您患有高血壓、高膽固醇/高血脂或高血糖嗎?  Do you have high blood pressure, high cholesterol/lipidaemia or high blood sugar?"]
+    const q1Choices = ["標準 Standard", "輕微過重/過輕 Slightly overweight/ underweight", "過重/過輕 overweight/ underweight", "嚴重過重/過輕 Severely overweight/ underweight"]
+    const q2_3_4Choices = ["沒有 No", "甚少 Seldom", "間中 Sometimes", "總是 Always"]
+    const q5Choices = ["沒有 No", "輕微 Slight", "中度 Moderate", "嚴重 Serious"]
 
   return (
-    <div style={{"margin" : "20px"}}>
+      <div style={{display: "flex", justifyContent:"center"}}>
+          <div style={{marginBottom: "20px", backgroundColor:"white", "margin": "20px", padding:"20px", maxWidth:"900px", borderRadius:"20px", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", backdropFilter: "blur(8.5px)"}}>
 
-      <h1 style={{"textAlign":"center"}}>Slim</h1>
+      <h1 style={{"textAlign":"center"}}>Slim  排毒瘦身</h1>
 
       <h3>{question[0]}</h3>
 
@@ -69,67 +70,67 @@ const Section4 = (props) => {
             </div>
             ))}
 
-      <center><Link to="/sec5" style={{"padding" :"5px","border":"1px solid black", "padding":"5px", "borderRadius": "5px", "textDecoration":"none", "backgroundColor":"black", "color":"white","fontSize":"20px"}} onClick={(e)=>{
+      <center><Link to="/sec5" style={{"border":"1px solid black", "padding":"5px", "borderRadius": "5px", "textDecoration":"none", "backgroundColor":"black", "color":"white","fontSize":"20px"}} onClick={(e)=>{
 
           for(let key in response){
 
             switch(key){
               case "question1":
-                if(response["question1" ] === "標準"){
+                if(response["question1" ] === q1Choices[0]){
                     sectionScore += 0
-                    }else if(response["question1"] === "輕微過重/過輕"){
+                    }else if(response["question1"] === q1Choices[1]){
                         sectionScore +=1
-                    }else if(response["question1"] === "過重/過輕"){
+                    }else if(response["question1"] === q1Choices[2]){
                     sectionScore +=2
-                    }else if(response["question1"] === "嚴重過重/過輕"){
+                    }else if(response["question1"] === q1Choices[3]){
                     sectionScore +=3
                     }
                 break;
 
               case "question2":
-                if(response["question2" ] === "沒有"){
+                if(response["question2" ] === q2_3_4Choices[0]){
                     sectionScore += 0
-                    }else if(response["question2"] === "甚少"){
+                    }else if(response["question2"] === q2_3_4Choices[1]){
                         sectionScore +=1
-                    }else if(response["question2"] === "間中(每月1-2次)"){
+                    }else if(response["question2"] === q2_3_4Choices[2]){
                     sectionScore +=2
-                    }else if(response["question2"] === "經常"){
+                    }else if(response["question2"] === q2_3_4Choices[3]){
                     sectionScore +=3
                     }
                 break;
 
               case "question3":
-                if(response["question3" ] === "沒有"){
+                if(response["question3" ] === q2_3_4Choices[0]){
                     sectionScore += 0
-                    }else if(response["question3"] === "甚少"){
-                        sectionScore +=1
-                    }else if(response["question3"] === "間中(每月1-2次"){
+                }else if(response["question2"] === q2_3_4Choices[1]){
+                    sectionScore +=1
+                }else if(response["question2"] === q2_3_4Choices[2]){
                     sectionScore +=2
-                    }else if(response["question3"] === "經常"){
+                }else if(response["question2"] === q2_3_4Choices[3]){
                     sectionScore +=3
-                    }
+                }
                 break;
               
               case "question4":
-                if(response["question4" ] === "沒有"){
+                if(response["question4" ] === q2_3_4Choices[0]){
                     sectionScore += 0
-                    }else if(response["question4"] === "甚少"){
-                        sectionScore +=1
-                    }else if(response["question4"] === "間中(每月1-2次"){
+                }else if(response["question2"] === q2_3_4Choices[1]){
+                    sectionScore +=1
+                }else if(response["question2"] === q2_3_4Choices[2]){
                     sectionScore +=2
-                    }else if(response["question4"] === "經常"){
+                }else if(response["question2"] === q2_3_4Choices[3]){
                     sectionScore +=3
-                    }
+                }
                 break;
                 
                 case "question5":
-                    if(response["question5" ] === "沒有"){
+                    if(response["question5" ] === q5Choices[0]){
                         sectionScore += 0
-                        }else if(response["question5"] === "輕微"){
+                        }else if(response["question5"] === q5Choices[1]){
                             sectionScore +=1
-                        }else if(response["question5"] === "中度"){
+                        }else if(response["question5"] === q5Choices[2]){
                         sectionScore +=2
-                        }else if(response["question5"] === "嚴重"){
+                        }else if(response["question5"] === q5Choices[3]){
                         sectionScore +=3
                         }
                     break;
@@ -160,7 +161,8 @@ const Section4 = (props) => {
       }}>Submit</Link></center>
   
 
-      </div>     
+      </div>
+      </div>
   )
 }
 

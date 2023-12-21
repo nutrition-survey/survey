@@ -15,48 +15,48 @@ const Section3 = () => {
         question5: ''
 
     })
-    const question = ["1. 您會容易患傷風感冒嗎?" ,"2. 您是否患病康復進度緩慢?" ,"3. 您是否容易肌肉/關節酸痛" , "4.您是否容易感到疲倦或沒有精力 ", "5. 您是否患有自身免疫疾病(例如:類風濕性關節炎、全身性紅斑狼瘡)"]
-    const q1Choices = ["沒有", "甚少", "間中(每月1-2次)", "經常"]
-    const q2_3_4Choices = ["沒有", "甚少", "間中", "經常"]
-    const q5Choices = ["沒有", "輕微", "中度", "嚴重"]
+    const question = ["1.\t您會容易患傷風感冒嗎?  Are you susceptible to colds?" ,"2.\t您是否患病康復進度緩慢? Are you recovering from an illness slowly?" ,"3.\t您是否容易肌肉/關節酸痛?　Are you prone to muscle/joint soreness?" , "4.您是否容易感到疲倦或沒有精力?  Do you feel tired easily or have no energy?", "5. 您是否患有自身免疫疾病(例如:類風濕性關節炎、全身性紅斑狼瘡) ? Do you have an autoimmune disease (e.g. rheumatoid arthritis, systemic lupus erythematosus)? "]
+    const q1_2_3_4Choices = ["沒有 No", "甚少 Seldom", "間中 Sometimes", "總是 Always"]
+    const q5Choices = ["沒有 No", "輕微 Slight", "中度 Moderate", "嚴重 Serious"]
 
   return (
-    <div style={{"margin" : "20px"}}>
+      <div style={{display: "flex", justifyContent:"center"}}>
+          <div style={{marginBottom: "20px", backgroundColor:"white", "margin": "20px", padding:"20px", maxWidth:"900px", borderRadius:"20px", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", backdropFilter: "blur(8.5px)"}}>
 
-        <h1 style={{"textAlign":"center"}}>Immune</h1>
+        <h1 style={{"textAlign":"center"}}>Immune 免疫</h1>
          <h3>{question[0]}</h3>
 
-       {q1Choices.map((choice,index) => (
+       {q1_2_3_4Choices.map((choice,index) => (
           <div>
-            <input style={{"marginRight":"5px"}} type='radio' value={q1Choices[index]} name='question1' onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question1"]: e.target.value }))} />
-            <label htmlFor={q1Choices[index]}>{q1Choices[index]}</label>
+            <input style={{"marginRight":"5px"}} type='radio' value={q1_2_3_4Choices[index]} name='question1' onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question1"]: e.target.value }))} />
+            <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
           </div>
           ))}
 
 
 
       <h3 style={{"marginTop": "10px"}} >{question[1]}</h3>
-          {q2_3_4Choices.map((choice,index) => (
+          {q1_2_3_4Choices.map((choice,index) => (
             <div>
-              <input style={{"marginRight":"5px"}} type='radio' name='question2' value={q2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question2"]: e.target.value }))} />
-              <label htmlFor={q1Choices[index]}>{q2_3_4Choices[index]}</label>
+              <input style={{"marginRight":"5px"}} type='radio' name='question2' value={q1_2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question2"]: e.target.value }))} />
+              <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
             </div>
             ))}
 
 
       <h3 style={{"marginTop": "10px"}} >{question[2]}</h3>
-      {q2_3_4Choices.map((choice,index) => (
+      {q1_2_3_4Choices.map((choice,index) => (
             <div>
-              <input style={{"marginRight":"5px"}} type='radio' name='question3'  value={q2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question3"]: e.target.value }))} />
-              <label htmlFor={q1Choices[index]}>{q2_3_4Choices[index]}</label>
+              <input style={{"marginRight":"5px"}} type='radio' name='question3'  value={q1_2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question3"]: e.target.value }))} />
+              <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
             </div>
             ))}
 
       <h3 style={{"marginTop": "10px"}} >{question[3]}</h3>
-      {q2_3_4Choices.map((choice,index) => (
+      {q1_2_3_4Choices.map((choice,index) => (
             <div>
-              <input style={{"marginRight":"5px"}} type='radio' name='question4' value={q2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question4"]: e.target.value }))} />
-              <label htmlFor={q1Choices[index]}>{q2_3_4Choices[index]}</label>
+              <input style={{"marginRight":"5px"}} type='radio' name='question4' value={q1_2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question4"]: e.target.value }))} />
+              <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
             </div>
             ))}
 
@@ -68,68 +68,68 @@ const Section3 = () => {
             </div>
             ))}
 
-            <center><Link to="/summary" style={{"padding" :"5px","border":"1px solid black", "padding":"5px", "borderRadius": "5px", "textDecoration":"none", "backgroundColor":"black", "color":"white","fontSize":"20px"}} onClick={(e)=>{
+            <center><Link to="/summary" style={{"border":"1px solid black", "padding":"5px", "borderRadius": "5px", "textDecoration":"none", "backgroundColor":"black", "color":"white","fontSize":"20px"}} onClick={(e)=>{
 
 
                 for(let key in response){
 
                   switch(key){
                     case "question1":
-                      if(response["question1" ] === "沒有"){
+                      if(response["question1" ] === q1_2_3_4Choices[0]){
                           sectionScore += 0
-                          }else if(response["question1"] === "甚少"){
+                          }else if(response["question1"] === q1_2_3_4Choices[1]){
                               sectionScore +=1
-                          }else if(response["question1"] === "間中(每月1-2次)"){
+                          }else if(response["question1"] === q1_2_3_4Choices[2]){
                           sectionScore +=2
-                          }else if(response["question1"] === "經常"){
+                          }else if(response["question1"] === q1_2_3_4Choices[3]){
                           sectionScore +=3
                           }
                       break;
 
                     case "question2":
-                      if(response["question2" ] === "沒有"){
+                      if(response["question2" ] === q1_2_3_4Choices[0]){
                           sectionScore += 0
-                          }else if(response["question2"] === "甚少"){
-                              sectionScore +=1
-                          }else if(response["question2"] === "間中"){
+                      }else if(response["question1"] === q1_2_3_4Choices[1]){
+                          sectionScore +=1
+                      }else if(response["question1"] === q1_2_3_4Choices[2]){
                           sectionScore +=2
-                          }else if(response["question2"] === "經常"){
+                      }else if(response["question1"] === q1_2_3_4Choices[3]){
                           sectionScore +=3
-                          }
+                      }
                       break;
 
                     case "question3":
-                      if(response["question3" ] === "沒有"){
+                      if(response["question3" ] === q1_2_3_4Choices[0]){
                           sectionScore += 0
-                          }else if(response["question3"] === "甚少"){
-                              sectionScore +=1
-                          }else if(response["question3"] === "間中"){
+                      }else if(response["question1"] === q1_2_3_4Choices[1]){
+                          sectionScore +=1
+                      }else if(response["question1"] === q1_2_3_4Choices[2]){
                           sectionScore +=2
-                          }else if(response["question3"] === "經常"){
+                      }else if(response["question1"] === q1_2_3_4Choices[3]){
                           sectionScore +=3
-                          }
+                      }
                       break;
                     
                     case "question4":
-                      if(response["question4" ] === "沒有"){
+                      if(response["question4" ] === q1_2_3_4Choices[0]){
                           sectionScore += 0
-                          }else if(response["question4"] === "甚少"){
-                              sectionScore +=1
-                          }else if(response["question4"] === "間中"){
+                      }else if(response["question1"] === q1_2_3_4Choices[1]){
+                          sectionScore +=1
+                      }else if(response["question1"] === q1_2_3_4Choices[2]){
                           sectionScore +=2
-                          }else if(response["question4"] === "經常"){
+                      }else if(response["question1"] === q1_2_3_4Choices[3]){
                           sectionScore +=3
-                          }
+                      }
                       break;
                       
                       case "question5":
-                          if(response["question5" ] === "沒有"){
+                          if(response["question5" ] === q5Choices[0]){
                               sectionScore += 0
-                              }else if(response["question5"] === "輕微"){
+                              }else if(response["question5"] === q5Choices[1]){
                                   sectionScore +=1
-                              }else if(response["question5"] === "中度"){
+                              }else if(response["question5"] === q5Choices[2]){
                               sectionScore +=2
-                              }else if(response["question5"] === "嚴重"){
+                              }else if(response["question5"] === q5Choices[3]){
                               sectionScore +=3
                               }
                           break;
@@ -159,6 +159,7 @@ const Section3 = () => {
 
             }}>Submit</Link></center>
           </div>
+      </div>
   )
 }
 
