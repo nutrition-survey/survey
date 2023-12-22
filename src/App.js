@@ -10,7 +10,11 @@ function App() {
   const [name, setName] = useState("")
 
   return (
-    <div className="App" style={{fontSize:"20px", display:"flex", justifyContent:"center", alignItems:"center"}}>
+    <div className="App" style={{fontSize:"20px", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+      <div style={{display:"flex", flexDirection: "column", justifyContent: "center", alignItems:"center"}}>
+        <h2 style={{marginBottom: "0"}}>亞健康評估問卷</h2>
+        <h3>Sub-health Assessment Questionnaire</h3>
+      </div>
 
         <div style={{width:"50%", marginTop:"100px", backgroundColor: "white", padding: "20px", borderRadius: "20px", display:"flex", flexDirection: "column", justifyContent: "center", alignItems: "center", maxWidth: "500px"}}>
           <label>Please Enter your name:</label> <br></br>
