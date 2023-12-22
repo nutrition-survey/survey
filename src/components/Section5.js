@@ -20,144 +20,193 @@ const Section3 = () => {
     const q5Choices = ["沒有 No", "輕微 Slight", "中度 Moderate", "嚴重 Serious"]
 
   return (
-      <div style={{display: "flex", justifyContent:"center"}}>
-          <div style={{marginBottom: "20px", backgroundColor:"white", "margin": "20px", padding:"20px", maxWidth:"900px", borderRadius:"20px", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", backdropFilter: "blur(8.5px)"}}>
+      <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
 
-        <h1 style={{"textAlign":"center"}}>Immune 免疫</h1>
-         <h3>{question[0]}</h3>
-
-       {q1_2_3_4Choices.map((choice,index) => (
-          <div>
-            <input style={{"marginRight":"5px"}} type='radio' value={q1_2_3_4Choices[index]} name='question1' onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question1"]: e.target.value }))} />
-            <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
+          <div style={{
+              display: "flex",
+              width: "100%",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+              backdropFilter: "blur(8.5px)"
+          }}>
+              <h2 style={{marginBottom: "0"}}>亞健康評估問卷</h2>
+              <h3>Sub-health Assessment Questionnaire</h3>
           </div>
-          ))}
+          <div style={{
+              marginBottom: "20px",
+              backgroundColor: "white",
+              "margin": "20px",
+              padding: "20px",
+              maxWidth: "900px",
+              borderRadius: "20px",
+              boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+              backdropFilter: "blur(8.5px)"
+          }}>
+
+              <h1 style={{"textAlign": "center"}}>Immune 免疫</h1>
+              <h3>{question[0]}</h3>
+
+              {q1_2_3_4Choices.map((choice, index) => (
+                  <div>
+                      <input style={{"marginRight": "5px"}} type='radio' value={q1_2_3_4Choices[index]} name='question1'
+                             onChange={e => setResponse((prevResponse) => ({
+                                 ...prevResponse,
+                                 ["question1"]: e.target.value
+                             }))}/>
+                      <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
+                  </div>
+              ))}
 
 
-
-      <h3 style={{"marginTop": "10px"}} >{question[1]}</h3>
-          {q1_2_3_4Choices.map((choice,index) => (
-            <div>
-              <input style={{"marginRight":"5px"}} type='radio' name='question2' value={q1_2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question2"]: e.target.value }))} />
-              <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
-            </div>
-            ))}
-
-
-      <h3 style={{"marginTop": "10px"}} >{question[2]}</h3>
-      {q1_2_3_4Choices.map((choice,index) => (
-            <div>
-              <input style={{"marginRight":"5px"}} type='radio' name='question3'  value={q1_2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question3"]: e.target.value }))} />
-              <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
-            </div>
-            ))}
-
-      <h3 style={{"marginTop": "10px"}} >{question[3]}</h3>
-      {q1_2_3_4Choices.map((choice,index) => (
-            <div>
-              <input style={{"marginRight":"5px"}} type='radio' name='question4' value={q1_2_3_4Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question4"]: e.target.value }))} />
-              <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
-            </div>
-            ))}
-
-      <h3 style={{"marginTop": "10px"}} >{question[4]}</h3>
-          {q5Choices.map((choice,index) => (
-            <div>
-              <input style={{"marginRight":"5px"}} type='radio' name='question5' value={q5Choices[index]} onChange={e => setResponse((prevResponse) => ({ ...prevResponse, ["question5"]: e.target.value }))} />
-              <label htmlFor={q5Choices[index]}>{q5Choices[index]}</label>
-            </div>
-            ))}
-
-            <center><Link to="/summary" style={{"border":"1px solid black", "padding":"5px", "borderRadius": "5px", "textDecoration":"none", "backgroundColor":"black", "color":"white","fontSize":"20px"}} onClick={(e)=>{
+              <h3 style={{"marginTop": "10px"}}>{question[1]}</h3>
+              {q1_2_3_4Choices.map((choice, index) => (
+                  <div>
+                      <input style={{"marginRight": "5px"}} type='radio' name='question2' value={q1_2_3_4Choices[index]}
+                             onChange={e => setResponse((prevResponse) => ({
+                                 ...prevResponse,
+                                 ["question2"]: e.target.value
+                             }))}/>
+                      <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
+                  </div>
+              ))}
 
 
-                for(let key in response){
+              <h3 style={{"marginTop": "10px"}}>{question[2]}</h3>
+              {q1_2_3_4Choices.map((choice, index) => (
+                  <div>
+                      <input style={{"marginRight": "5px"}} type='radio' name='question3' value={q1_2_3_4Choices[index]}
+                             onChange={e => setResponse((prevResponse) => ({
+                                 ...prevResponse,
+                                 ["question3"]: e.target.value
+                             }))}/>
+                      <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
+                  </div>
+              ))}
 
-                  switch(key){
-                    case "question1":
-                      if(response["question1" ] === q1_2_3_4Choices[0]){
-                          sectionScore += 0
-                          }else if(response["question1"] === q1_2_3_4Choices[1]){
-                              sectionScore +=1
-                          }else if(response["question1"] === q1_2_3_4Choices[2]){
-                          sectionScore +=2
-                          }else if(response["question1"] === q1_2_3_4Choices[3]){
-                          sectionScore +=3
-                          }
-                      break;
+              <h3 style={{"marginTop": "10px"}}>{question[3]}</h3>
+              {q1_2_3_4Choices.map((choice, index) => (
+                  <div>
+                      <input style={{"marginRight": "5px"}} type='radio' name='question4' value={q1_2_3_4Choices[index]}
+                             onChange={e => setResponse((prevResponse) => ({
+                                 ...prevResponse,
+                                 ["question4"]: e.target.value
+                             }))}/>
+                      <label htmlFor={q1_2_3_4Choices[index]}>{q1_2_3_4Choices[index]}</label>
+                  </div>
+              ))}
 
-                    case "question2":
-                      if(response["question2" ] === q1_2_3_4Choices[0]){
-                          sectionScore += 0
-                      }else if(response["question1"] === q1_2_3_4Choices[1]){
-                          sectionScore +=1
-                      }else if(response["question1"] === q1_2_3_4Choices[2]){
-                          sectionScore +=2
-                      }else if(response["question1"] === q1_2_3_4Choices[3]){
-                          sectionScore +=3
-                      }
-                      break;
+              <h3 style={{"marginTop": "10px"}}>{question[4]}</h3>
+              {q5Choices.map((choice, index) => (
+                  <div>
+                      <input style={{"marginRight": "5px"}} type='radio' name='question5' value={q5Choices[index]}
+                             onChange={e => setResponse((prevResponse) => ({
+                                 ...prevResponse,
+                                 ["question5"]: e.target.value
+                             }))}/>
+                      <label htmlFor={q5Choices[index]}>{q5Choices[index]}</label>
+                  </div>
+              ))}
 
-                    case "question3":
-                      if(response["question3" ] === q1_2_3_4Choices[0]){
-                          sectionScore += 0
-                      }else if(response["question1"] === q1_2_3_4Choices[1]){
-                          sectionScore +=1
-                      }else if(response["question1"] === q1_2_3_4Choices[2]){
-                          sectionScore +=2
-                      }else if(response["question1"] === q1_2_3_4Choices[3]){
-                          sectionScore +=3
-                      }
-                      break;
-                    
-                    case "question4":
-                      if(response["question4" ] === q1_2_3_4Choices[0]){
-                          sectionScore += 0
-                      }else if(response["question1"] === q1_2_3_4Choices[1]){
-                          sectionScore +=1
-                      }else if(response["question1"] === q1_2_3_4Choices[2]){
-                          sectionScore +=2
-                      }else if(response["question1"] === q1_2_3_4Choices[3]){
-                          sectionScore +=3
-                      }
-                      break;
-                      
-                      case "question5":
-                          if(response["question5" ] === q5Choices[0]){
-                              sectionScore += 0
-                              }else if(response["question5"] === q5Choices[1]){
-                                  sectionScore +=1
-                              }else if(response["question5"] === q5Choices[2]){
-                              sectionScore +=2
-                              }else if(response["question5"] === q5Choices[3]){
-                              sectionScore +=3
+              <center><Link to="/summary" style={{
+                  "border": "1px solid black",
+                  "padding": "5px",
+                  "borderRadius": "5px",
+                  "textDecoration": "none",
+                  "backgroundColor": "black",
+                  "color": "white",
+                  "fontSize": "20px"
+              }} onClick={(e) => {
+
+
+                  for (let key in response) {
+
+                      switch (key) {
+                          case "question1":
+                              if (response["question1"] === q1_2_3_4Choices[0]) {
+                                  sectionScore += 0
+                              } else if (response["question1"] === q1_2_3_4Choices[1]) {
+                                  sectionScore += 1
+                              } else if (response["question1"] === q1_2_3_4Choices[2]) {
+                                  sectionScore += 2
+                              } else if (response["question1"] === q1_2_3_4Choices[3]) {
+                                  sectionScore += 3
                               }
-                          break;
-            
-                    default:
-                      console.log("Not Found");
-                      break;
-                  }
-                }
-            
+                              break;
 
-                for(let key in response){
-                  if(response[key] === ''){
-                    alert("Please Complete the form")
-                    e.preventDefault();
+                          case "question2":
+                              if (response["question2"] === q1_2_3_4Choices[0]) {
+                                  sectionScore += 0
+                              } else if (response["question1"] === q1_2_3_4Choices[1]) {
+                                  sectionScore += 1
+                              } else if (response["question1"] === q1_2_3_4Choices[2]) {
+                                  sectionScore += 2
+                              } else if (response["question1"] === q1_2_3_4Choices[3]) {
+                                  sectionScore += 3
+                              }
+                              break;
+
+                          case "question3":
+                              if (response["question3"] === q1_2_3_4Choices[0]) {
+                                  sectionScore += 0
+                              } else if (response["question1"] === q1_2_3_4Choices[1]) {
+                                  sectionScore += 1
+                              } else if (response["question1"] === q1_2_3_4Choices[2]) {
+                                  sectionScore += 2
+                              } else if (response["question1"] === q1_2_3_4Choices[3]) {
+                                  sectionScore += 3
+                              }
+                              break;
+
+                          case "question4":
+                              if (response["question4"] === q1_2_3_4Choices[0]) {
+                                  sectionScore += 0
+                              } else if (response["question1"] === q1_2_3_4Choices[1]) {
+                                  sectionScore += 1
+                              } else if (response["question1"] === q1_2_3_4Choices[2]) {
+                                  sectionScore += 2
+                              } else if (response["question1"] === q1_2_3_4Choices[3]) {
+                                  sectionScore += 3
+                              }
+                              break;
+
+                          case "question5":
+                              if (response["question5"] === q5Choices[0]) {
+                                  sectionScore += 0
+                              } else if (response["question5"] === q5Choices[1]) {
+                                  sectionScore += 1
+                              } else if (response["question5"] === q5Choices[2]) {
+                                  sectionScore += 2
+                              } else if (response["question5"] === q5Choices[3]) {
+                                  sectionScore += 3
+                              }
+                              break;
+
+                          default:
+                              console.log("Not Found");
+                              break;
+                      }
                   }
-                }
+
+
+                  for (let key in response) {
+                      if (response[key] === '') {
+                          alert("Please Complete the form")
+                          e.preventDefault();
+                      }
+                  }
                   cookie.set("section5Score", sectionScore);
                   const summary = {
-                    [question[0]] : response['question1'],
-                    [question[1]] : response["question2"],
-                    [question[2]] : response["question3"],
-                    [question[3]] : response["question4"],
-                    [question[4]] : response["question5"],
+                      [question[0]]: response['question1'],
+                      [question[1]]: response["question2"],
+                      [question[2]]: response["question3"],
+                      [question[3]]: response["question4"],
+                      [question[4]]: response["question5"],
                   }
                   cookie.set("section5QA", summary)
 
-            }}>Submit</Link></center>
+              }}>Submit</Link></center>
           </div>
       </div>
   )

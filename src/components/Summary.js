@@ -3,7 +3,7 @@ import Cookies from "universal-cookie";
 import { db } from "../config/firebase-config";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { BarElement, CategoryScale, Chart as ChartJS, LinearScale } from "chart.js";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 const cookie = new Cookies();
 
@@ -82,12 +82,25 @@ function Summary() {
 
 
   return (
-    <div className="App" style={{ margin: "100px" }}>
-      <center>
-        <h1 style={{ marginBottom: "50px" }}>Summary of Your Response</h1>
-      </center>
-      <Bar  data={chartData} />
-    </div>
+      <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+
+        <div style={{
+          display: "flex",
+          width: "100%",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+          backdropFilter: "blur(8.5px)"
+        }}>
+          <h2 style={{marginBottom: "0"}}>亞健康評估問卷</h2>
+          <h3>Sub-health Assessment Questionnaire</h3>
+        </div>
+        <center>
+          <h1 style={{marginBottom: "50px"}}>Summary of Your Response</h1>
+        </center>
+        <Bar style={{margin: "0px 100px", maxWidth: "900px", maxHeight: "70%"}} data={chartData}/>
+      </div>
   );
 }
 
