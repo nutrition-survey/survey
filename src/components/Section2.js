@@ -106,12 +106,17 @@ const section2 = question.map((question, index) => {
                       }
                   }
 
+                  let show_alert = false
 
                   for (let key in response) {
                       if (response[key] === '') {
-                          alert("Please Complete the form")
+                          show_alert = true
                           e.preventDefault();
                       }
+                  }
+
+                  if(show_alert === true) {
+                    alert("Please Complete the form")
                   }
                   cookie.set("section2Score", sectionScore);
                   const summary = {
